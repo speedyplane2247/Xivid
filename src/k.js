@@ -29,8 +29,16 @@ function loadKext(filename) {
        _/ |    
       |__/     
 */
+// System-Wide Variables
 // Cryptography Functions
+loadKext("https://raw.githubusercontent.com/speedyplane2247/speedyplane2247.github.io/master/sha256/build/forge-sha256.js")
 // Failure Codes
+function fCode(code) {
+xterm.clear()
+xterm.write("$ XiViD Kernel Fail $")
+xterm.write("XiViD has crashed with the code " + code)
+xterm.write("If you don't know this code, try looking it up in the Wiki.")
+}
 // Write to eRAM
 // Bool Sign
 // Codesign Bool Writer
