@@ -30,14 +30,19 @@ function loadKext(filename) {
       |__/     
 */
 // System-Wide Variables
+var $string = new Object();
+// Systemw-wide Strings
+$string.kernel_failinit = "$ XiViD Kernel Fail $"
+$string.kernel_failcode = "XiViD has crashed with the code"
+$string.kernel_failwiki = "If you don't know this code, try looking it up in the Wiki."
 // Cryptography Functions
 loadKext("https://raw.githubusercontent.com/speedyplane2247/speedyplane2247.github.io/master/sha256/build/forge-sha256.js")
 // Failure Codes
 function fCode(code) {
 xterm.clear()
-xterm.write("$ XiViD Kernel Fail $")
-xterm.write("XiViD has crashed with the code " + code)
-xterm.write("If you don't know this code, try looking it up in the Wiki.")
+xterm.write($string.kernel_failinit)
+xterm.write($string.kernel_failcode + code)
+xterm.write($string.kernel_failwiki)
 }
 // Write to eRAM
 // Bool Sign
@@ -45,7 +50,7 @@ xterm.write("If you don't know this code, try looking it up in the Wiki.")
 // RoV Authorization
 // eRAM Engine
 /*
-_       _     
+  _       _     
  | |     (_)    
  | |__    _ ___ 
  | '_ \  | / __|
