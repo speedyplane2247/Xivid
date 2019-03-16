@@ -31,6 +31,8 @@ function loadKext(filename) {
 */
 // System-Wide Variables
 var $string = new Object();
+var $eram = new Object();
+var $kernel = new Object();
 // Systemw-wide Strings
 $string.kernel_failinit = "$ XiViD Kernel Fail $"
 $string.kernel_failcode = "XiViD has crashed with the code"
@@ -45,6 +47,13 @@ xterm.write($string.kernel_failcode + code)
 xterm.write($string.kernel_failwiki)
 }
 // Write to eRAM
+$eram.m = [0,0]
+$eram.write = function(data, sector) {
+$eram.m[sector] = data
+}
+$eram.read = function(sector) {
+return $eram.m[sector]
+}
 // Bool Sign
 // Codesign Bool Writer
 // RoV Authorization
