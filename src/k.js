@@ -33,6 +33,7 @@ function loadKext(filename) {
 var $string = new Object();
 var $eram = new Object();
 var $kernel = new Object();
+var $hypervisor = new Object();
 // Systemw-wide Strings
 $string.kernel_failinit = "$ XiViD Kernel Fail $"
 $string.kernel_failcode = "XiViD has crashed with the code"
@@ -55,7 +56,14 @@ $eram.read = function(sector) {
 return $eram.m[sector]
 }
 // Bool Sign
+$kernel.Codesign = 1
+$kernel.allowExtCodesign = 0
 // Codesign Bool Writer
+function debugNoSign() {
+if ($kerNel.allowExtCodesign == 1) {
+$hypervisor.CodeSign = 1
+}
+}
 // RoV Authorization
 // eRAM Engine
 /*
