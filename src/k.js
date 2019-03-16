@@ -57,7 +57,10 @@ return $eram.m[sector]
 }
 // Bool Sign
 $kernel.Codesign = 1
+
+// Kernel Debug Authorization
 $kernel.allowExtCodesign = 0
+$kernel.allowRoVAccess = 0
 // Codesign Bool Writer
 function debugNoSign() {
 if ($kerNel.allowExtCodesign == 1) {
